@@ -20,7 +20,8 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.1",
     "morgan": "^1.10.0",
-    "punycode": "^2.3.1"
+    "punycode": "^2.3.1",
+    "underscore": "^1.13.6"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

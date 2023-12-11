@@ -6,7 +6,11 @@ const mongoose = require('mongoose');
 
 //They query routes
 const charactersRoute = require('./api/routes/characters');
-const fruitsRoute = require('./api/routes/fruits');
+const devilFruitRoute = require('./api/routes/devilFruits');
+const crewsRoute = require('./api/routes/crew');
+const locationsRoute = require('./api/routes/location');
+const sublocationsRoute = require('./api/routes/sublocation');
+const occupationsRoute = require('./api/routes/occupation');
 
 mongoose.connect('mongodb+srv://one-piece-api:monkey-d-luffy@one-piece.wredkcf.mongodb.net/OnePieceDB');
 
@@ -33,7 +37,12 @@ app.use((req,res,next)=>{
 
 //This for chacters, fruits etc. query
 app.use('/characters', charactersRoute);
-app.use('/fruits', fruitsRoute);
+app.use('/devilFruits', devilFruitRoute);
+app.use('/crews', crewsRoute);
+app.use('/locations', locationsRoute);
+app.use('/sublocations', sublocationsRoute);
+app.use('/occupations', occupationsRoute);
+
 
 //This for 404 not found error
 app.use((req,res,next)=>{

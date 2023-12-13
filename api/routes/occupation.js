@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
                 info: {
                     count: docs.length
                 },
-                result: docs,
+                results: docs,
             }
             res.status(200).json(response);
         })

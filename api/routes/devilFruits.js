@@ -11,8 +11,8 @@ router.get('/', (req, res, next) => {
         .exec()
         .then(docs => {
             const response = {
-                info: docs.length,
-                result: docs,
+                info: {count: docs.length},
+                results: docs,
             }
             res.status(200).json(response);
         })

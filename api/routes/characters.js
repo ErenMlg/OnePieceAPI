@@ -108,17 +108,13 @@ router.get('/crewsRecruit/:crewID', (req, res, next) => {
         .then(docs => {
             console.log("From database", docs);
             if (docs) {
-                if(docs.length > 1){
-                    const response = {
-                        info: {
-                            count: docs.length
-                        },
-                        result: docs,
-                    }
-                    res.status(200).json(response);
-                }else{
-                    res.status(200).json(docs);
+                const response = {
+                    info: {
+                        count: docs.length
+                    },
+                    results: docs,
                 }
+                res.status(200).json(response);
             } else {
                 res.status(404).json({ message: "No valid entry found for provided ID" });
             }
@@ -151,19 +147,14 @@ router.get('/occupationOwners/:occupationID', (req, res, next) => {
         })
         .exec()
         .then(docs => {
-            console.log("From database", docs);
             if (docs) {
-                if(docs.length > 1){
-                    const response = {
-                        info: {
-                            count: docs.length
-                        },
-                        result: docs,
-                    }
-                    res.status(200).json(response);
-                }else{
-                    res.status(200).json(docs);
+                const response = {
+                    info: {
+                        count: docs.length
+                    },
+                    results: docs,
                 }
+                res.status(200).json(response);
             } else {
                 res.status(404).json({ message: "No valid entry found for provided ID" });
             }

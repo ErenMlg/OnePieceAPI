@@ -12,10 +12,10 @@ router.get('/', (req,res,next) => {
     .exec()
     .then(docs => {
         const result = {
-            info:{
+            info: {
                 count: docs.length
             },
-            result: docs
+            results: docs
         }
         res.status(200).json(result);
     }).catch(err => {
@@ -23,6 +23,7 @@ router.get('/', (req,res,next) => {
         res.status(500).json({error: err});
     });
 }); 
+
 
 router.post('/', (req,res,next) => {
         const crew = new Crew({
